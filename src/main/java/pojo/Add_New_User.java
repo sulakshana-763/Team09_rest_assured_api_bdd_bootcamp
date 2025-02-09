@@ -6,12 +6,10 @@ public class Add_New_User {
 	private String user_last_name;
 	private String user_contact_number;
 	private String user_email_id;
-
-	private Object userAddress ; 
-	/*
-	 * { "plotNumber": "string" "Street": "string" "state": "string" "Country":
-	 * "string" "zipCode": "string"
-	 */
+	private String user_id;	
+		
+	private userAddress userAddress ; 
+	
 
 	public String getUser_first_name() {
 		return user_first_name;
@@ -43,6 +41,23 @@ public class Add_New_User {
 
 	public void setUser_email_id(String user_email_id) {
 		this.user_email_id = user_email_id;
+	}
+
+	
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public userAddress getUserAddress() {
+		return userAddress;
+	}
+
+	public void setUserAddress(userAddress userAddress) {
+		this.userAddress = userAddress;
 	}
 
 }

@@ -1,7 +1,6 @@
 package pojo;
 
 public class GetUsers {
-
 	
 	private GetAddress userAddress; 
 	private String user_first_name; 
@@ -10,7 +9,9 @@ public class GetUsers {
 	private String user_email_id;
 	private int user_id;
 	private String creation_time;
-	private String last_mod_time; 
+	private String last_mod_time;
+	private String status;
+	private String message;
 	
 	public GetAddress getUserAddress() {
 		return userAddress;
@@ -59,6 +60,18 @@ public class GetUsers {
 	}
 	public void setLast_mod_time(String last_mod_time) {
 		this.last_mod_time = last_mod_time;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
 	} 
 		   
 		 

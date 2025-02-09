@@ -38,6 +38,12 @@ public class ConfigReader {
 	        else throw new RuntimeException("base_Url not specified in the Configuration.properties file.");
 	    }
 	 
+	 public static String createNewUser() {
+	        String createUser = properties.getProperty("createUser");
+	        if(createUser != null) return createUser;
+	        else throw new RuntimeException("createUser not specified in the Configuration.properties file.");
+	    }
+	 
 	 public static String getWithId() {
 	        String getWithId = properties.getProperty("getWithId");
 	        if(getWithId != null) return getWithId;

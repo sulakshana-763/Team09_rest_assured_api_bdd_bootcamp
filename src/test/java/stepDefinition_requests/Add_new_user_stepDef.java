@@ -40,16 +40,18 @@ public class Add_new_user_stepDef {
 
 	@Given("POST request for adding new user is set with valid fields")
 	public void post_request_for_adding_new_user_is_set_with_valid_fields() {
+		
+		//Initailize all testcases from excel sheet
 		Payload.loadTestCases();
-		System.out.println("Using userEmail: " + Payload.userEmail);
-		System.out.println("system payload = " +Payload.addNewUser());
+		//base url with auth and request body
 		res = given().spec(newUserPage.getPostRequest()).body(Payload.addNewUser());
 	}
 
 	@When("Add new user POST request is send")
 	public void add_new_user_post_request_is_send() {
 		
-		rawResponse = res.when().post("uap/createusers").then().spec(newUserPage.getPostResponse()).log().all()
+		//end points for post and extract the response
+		rawResponse = res.when().post(reader.createNewUser()).then().spec(newUserPage.getPostResponse()).log().all()
 				.extract().response();
 		// Extract the status code from the raw response
 		int statusCode = rawResponse.getStatusCode();

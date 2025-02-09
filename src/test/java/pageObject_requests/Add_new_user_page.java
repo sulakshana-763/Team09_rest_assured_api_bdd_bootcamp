@@ -32,6 +32,11 @@ public class Add_new_user_page {
 		ResponseSpecification responseSpec = new ResponseSpecBuilder().expectStatusCode(201).build();
 		return responseSpec;
 	}
+	
+	public static ResponseSpecification getPostResponseForInvalidEmail() {
+		ResponseSpecification responseSpec = new ResponseSpecBuilder().expectStatusCode(400).build();
+		return responseSpec;
+	}
 
 	public static void loadTestCases() {
 		

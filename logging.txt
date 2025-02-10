@@ -1,0 +1,63 @@
+Request method:	POST
+Request URI:	https://userserviceapp-f5a54828541b.herokuapp.com/uap/createusers
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "user_first_name": "Murugan",
+    "user_last_name": "Mannan",
+    "user_contact_number": 9977556643,
+    "user_email_id": "team09ygf@gmail.com",
+    "userAddress": {
+        "plotNumber": "Pl-10",
+        "state": "NY",
+        "zipCode": 10081,
+        "country": "USA",
+        "street": "Main"
+    },
+    "endpoint": "/uap/createusers",
+    "exp_statuscode": 201
+}
+HTTP/1.1 201 
+Server: Cowboy
+Report-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1739214784&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=2oJBt5DeJMD44dskxkwM0Bhs2NwlfARkD1OyuOkYaiI%3D"}]}
+Reporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1739214784&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=2oJBt5DeJMD44dskxkwM0Bhs2NwlfARkD1OyuOkYaiI%3D
+Nel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}
+Connection: keep-alive
+Set-Cookie: JSESSIONID=2D8A7EA8510F099A85A5A920E8C216B3; Path=/; Secure; HttpOnly
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 10 Feb 2025 19:13:04 GMT
+Via: 1.1 vegur
+
+{
+    "userAddress": {
+        "addressId": 20720,
+        "plotNumber": "Pl-10",
+        "street": "Main",
+        "state": "NY",
+        "country": "USA",
+        "zipCode": 10081
+    },
+    "user_id": 20753,
+    "user_first_name": "Murugan",
+    "user_last_name": "Mannan",
+    "user_contact_number": 9977556643,
+    "user_email_id": "team09ygf@gmail.com",
+    "creation_time": "2025-02-10T19:13:04.392+00:00",
+    "last_mod_time": "2025-02-10T19:13:04.392+00:00"
+}

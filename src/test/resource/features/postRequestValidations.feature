@@ -8,8 +8,8 @@ Feature: Post API Validations
   Scenario: validate new user created using valid fields
     Given new user request payload with valid fields and sets Post with valid URI
     When user sends the "Post request" with valid "endpoint"
-    Then user receives "status code" as "200" 
-    And "statusline" is "OK"
+    Then user receives "status code" as "201" 
+    
 
   #@post2
   #Scenario Outline: Title of your scenario outline

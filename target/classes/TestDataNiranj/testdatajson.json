@@ -1,0 +1,26 @@
+
+   {
+  "requests": [
+    {
+      "name": "POST valid scenarios",
+      "data": [
+        {
+          "user_first_name": "Murugan",
+          "user_last_name": "Mannan",
+          "user_contact_number": 9977556643,
+          "user_email_id": "team09ygf@gmail.com",
+          "userAddress": {
+            "plotNumber": "Pl-10",
+            "street": "Main",
+            "state": "NY",
+            "country": "USA",
+            "zipCode": 10081
+          },
+          "endpoint": "/uap/createusers",
+          "exp_statuscode": 201
+        }
+      ]
+    
+    }
+  ]
+}

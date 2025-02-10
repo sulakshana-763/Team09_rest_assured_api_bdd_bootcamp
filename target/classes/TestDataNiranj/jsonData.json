@@ -1,0 +1,43 @@
+{
+  "testCases": [
+    {
+      "users": [
+        {
+          
+      "plotnum": "A-140",
+      "streetName": "heritage tree lane",
+      "state": "chicago",
+      "country": "US",
+      "zip": 75648,
+    
+         },
+        {
+    "fName": "jacob",
+    "lName": "perri",
+    "contactNum": 6799278589,
+    "emailid": "ygsrdsf54@yahoo.com"
+        }
+      ]
+    },
+    {
+      "users": [
+        {
+          "plotnum": "E-456",
+      "streetName": "heritage tree lane",
+      "state": "california",
+      "country": "US",
+      "zip": 75648,
+    
+   
+
+        },
+        {
+         "fName": "emily",
+         "lName": " ",
+         "contactNum": 8936256435,
+         "emailid": "milred90@google.com"
+        }
+      ]
+    }
+  ]
+}

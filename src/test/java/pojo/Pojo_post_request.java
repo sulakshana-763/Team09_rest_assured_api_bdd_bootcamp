@@ -8,6 +8,10 @@ public class Pojo_post_request {
 	private long user_contact_number;
 	private String user_email_id;
 	private Pojo_post_address userAddress;
+	private String endpoint;
+	private int exp_statuscode;
+	
+   
 	
 	public String getUser_first_name() {
 		return user_first_name;
@@ -41,6 +45,19 @@ public class Pojo_post_request {
 	}
 	
 	
+	 public String getEndpoint() {
+			return endpoint;
+		}
+		public void setEndpoint(String endpoint) {
+			this.endpoint = endpoint;
+		}
+		public int getExp_statuscode() {
+			return exp_statuscode;
+		}
+		public void setExp_statuscode(int exp_statuscode) {
+			this.exp_statuscode = exp_statuscode;
+		}
+		
 	
 
 }

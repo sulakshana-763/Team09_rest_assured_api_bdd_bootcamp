@@ -31,10 +31,13 @@ public class Add_new_user_stepDef {
 	Post_api post_api = new Post_api();
 	GetUsers getUser = new GetUsers();
 	GetUsers getUserresponse;
-	RequestSpecification res;
+	public static RequestSpecification res;
 	ConfigReader reader = new ConfigReader();
 	int statusCode;
-	static int id;
+	public static int id;
+	public static String username;
+	public static String contentType;
+	public static String server;
 	Response rawResponse;
 	Add_new_user_page newUserPage = new Add_new_user_page();
 
@@ -55,19 +58,29 @@ public class Add_new_user_stepDef {
 				.extract().response();
 		// Extract the status code from the raw response
 		int statusCode = rawResponse.getStatusCode();
-
+		
+		contentType = rawResponse.getHeader("Content-Type");
+		server = rawResponse.getHeader("Server");
+		
 		// Deserialize the response body into GetUsers class
 		getUserresponse = rawResponse.as(GetUsers.class);
 		// Store the status code for later validation
 		this.statusCode = statusCode;
-		id = getUserresponse.getUser_id();
-		
+		this.username = getUserresponse.getUser_first_name();
+		System.out.println("username in get = " + this.username);
+		id = getUserresponse.getUser_id();		
 	}
 
 	@Then("The status recieved is success")
 	public void the_status_recieved_is_success() {
 
 		Assert.assertEquals(statusCode, 201, "Expected status code 201.");
+		Assert.assertEquals(contentType, "application/json", "Content-Type is incorrect.");
+		Assert.assertTrue(server.contains("Cowboy"), "Server should be Cowboy.");
+		Assert.assertNotNull(getUserresponse.getUser_id(), "User ID should not be null.");
+		Assert.assertTrue(Integer.class.isInstance(getUserresponse.getUser_id()), "User ID should be an Integer.");
+		Assert.assertEquals(rawResponse.getHeader("Content-Type"), "application/json", "Content-Type mismatch.");
+		Assert.assertTrue(rawResponse.getHeader("Server").contains("Cowboy"), "Server mismatch.");
 	}
 
 	@Given("GET request for adding new user is set with valid fields")
@@ -81,7 +94,7 @@ public class Add_new_user_stepDef {
 	public void get_request_to_get_newly_added_user_with_user_id_is_send() {		
 
 		rawResponse = res.when().get(reader.getWithId(), id).then().log().all().extract().response();
-		statusCode = rawResponse.getStatusCode();
+		statusCode = rawResponse.getStatusCode();		
 	}
 
 	@Then("The status recieved is success with success code")
@@ -99,12 +112,8 @@ public class Add_new_user_stepDef {
 
 	@When("DELETE request with new user userId is send")
 	public void delete_request_with_new_user_user_id_is_send() throws InterruptedException {
-
-		for (int i = 0; i < 3; i++) {
+	
 		rawResponse = res.when().delete(reader.deleteWithId(), id).then().log().all().extract().response();
-		statusCode = rawResponse.getStatusCode();
-		 if (rawResponse.getStatusCode() == 200) break;
-		    Thread.sleep(2000);
-		}
+		statusCode = rawResponse.getStatusCode();		 
 	}
 }

@@ -4,8 +4,8 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-		features = {"src/test/resources/features"},
-		glue = {"stepDefinition_requests"},
+		glue = {"stepDefinition_requests","Hooks"},
+		features = {"src/test/resources/features/add_new_user.feature"},		
 		plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 		)
 public class Testrunner extends AbstractTestNGCucumberTests {

@@ -13,15 +13,7 @@ import org.json.simple.parser.ParseException;
 
 public class PostTestdataBuild {
 	
-//	    private List<Pojo_payload_list> testCases;
-//
-//	    public List<Pojo_payload_list> getTestCases() {
-//	        return testCases;
-//	    }
-//
-//	    public void setTestCases(List<Pojo_payload_list> testCases) {
-//	        this.testCases = testCases;
-//	    }
+
 	
 	private List<Pojo_payload_list> requests;
 

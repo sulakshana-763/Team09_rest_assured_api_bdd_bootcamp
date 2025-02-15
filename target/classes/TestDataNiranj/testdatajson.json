@@ -15,10 +15,9 @@
             "state": "NY",
             "country": "USA",
             "zipCode": 10081
-          },
-          "endpoint": "/uap/createusers",
-          "exp_statuscode": 201
-        }
+          }
+          }
+          
       ]
     
     }

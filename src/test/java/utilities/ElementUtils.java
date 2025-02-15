@@ -57,17 +57,7 @@ public class ElementUtils {
 		
 	}
 
-//	public String getJsonPath(Response response, String key) {
-//	    JsonPath jsonPath = new JsonPath(response.asString());
-//	    
-//	    // Check if the key exists before accessing it
-//	    if (jsonPath.getMap("$").containsKey(key)) {
-//	        return jsonPath.getString(key);
-//	    } else {
-//	        throw new RuntimeException("Key '" + key + "' not found in response JSON.");
-//	    }
-//	}
-	
+
 	
 	
 	public static String getJsonPath(Response response, String key) {
